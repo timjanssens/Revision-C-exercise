@@ -1,0 +1,13 @@
+D:\OOP Labo's\Herhaling\MainProgramFile\bin\Debug\netcoreapp3.1\MainProgramFile.exe
+D:\OOP Labo's\Herhaling\MainProgramFile\bin\Debug\netcoreapp3.1\MainProgramFile.deps.json
+D:\OOP Labo's\Herhaling\MainProgramFile\bin\Debug\netcoreapp3.1\MainProgramFile.runtimeconfig.json
+D:\OOP Labo's\Herhaling\MainProgramFile\bin\Debug\netcoreapp3.1\MainProgramFile.runtimeconfig.dev.json
+D:\OOP Labo's\Herhaling\MainProgramFile\bin\Debug\netcoreapp3.1\MainProgramFile.dll
+D:\OOP Labo's\Herhaling\MainProgramFile\bin\Debug\netcoreapp3.1\MainProgramFile.pdb
+D:\OOP Labo's\Herhaling\MainProgramFile\obj\Debug\netcoreapp3.1\MainProgramFile.csprojAssemblyReference.cache
+D:\OOP Labo's\Herhaling\MainProgramFile\obj\Debug\netcoreapp3.1\MainProgramFile.csproj.CoreCompileInputs.cache
+D:\OOP Labo's\Herhaling\MainProgramFile\obj\Debug\netcoreapp3.1\MainProgramFile.AssemblyInfoInputs.cache
+D:\OOP Labo's\Herhaling\MainProgramFile\obj\Debug\netcoreapp3.1\MainProgramFile.AssemblyInfo.cs
+D:\OOP Labo's\Herhaling\MainProgramFile\obj\Debug\netcoreapp3.1\MainProgramFile.dll
+D:\OOP Labo's\Herhaling\MainProgramFile\obj\Debug\netcoreapp3.1\MainProgramFile.pdb
+D:\OOP Labo's\Herhaling\MainProgramFile\obj\Debug\netcoreapp3.1\MainProgramFile.genruntimeconfig.cache
