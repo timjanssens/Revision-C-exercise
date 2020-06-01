@@ -18,6 +18,8 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
                 Console.WriteLine("H9 Memory management with classes.");
                 Console.WriteLine("**********************************");
                 Console.WriteLine("1. PokeAttack");
+                Console.WriteLine("2. Consious Pokemon");
+                Console.WriteLine("3. Consious Pokemon Safe");
                 Console.WriteLine("");
                 Console.WriteLine("r. Return to main menu");
                 Console.WriteLine("q. End Program");
@@ -28,7 +30,12 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
                     case '1':
                         PokeProgram.MakePokemon();
                         break;
-
+                    case '2':
+                        PokeProgram.TestConsiousPokemon();
+                        break;
+                    case '3':
+                        PokeProgram.testConsiousPokemonSafe();
+                        break;
                     case 'r':
                         keepMenu = false;
                         break;
