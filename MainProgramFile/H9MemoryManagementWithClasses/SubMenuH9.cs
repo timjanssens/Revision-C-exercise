@@ -20,7 +20,9 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
                 Console.WriteLine("1. PokeAttack");
                 Console.WriteLine("2. Consious Pokemon");
                 Console.WriteLine("3. Consious Pokemon Safe");
-                Console.WriteLine("");
+                Console.WriteLine("4. Poke Value or reference");
+                Console.WriteLine("5. PokeFight");
+                Console.WriteLine("5. PokeFight imporved");
                 Console.WriteLine("r. Return to main menu");
                 Console.WriteLine("q. End Program");
                 char choice = Console.ReadKey().KeyChar;
@@ -35,6 +37,12 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
                         break;
                     case '3':
                         PokeProgram.testConsiousPokemonSafe();
+                        break;
+                    case '4':
+                        PokeProgram.DemoRestoreHP();
+                        break;
+                    case '5':
+                        PokeProgram.DemoFightOutcome();
                         break;
                     case 'r':
                         keepMenu = false;

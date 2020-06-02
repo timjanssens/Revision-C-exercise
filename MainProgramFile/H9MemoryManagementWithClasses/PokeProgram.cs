@@ -69,7 +69,7 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
             var poke1 = new Pokemon() { HP = 0, MaxHp = 20, PokeSpecie = PokeSpecies.Balbasaur, PokeType = PokeTypes.Grass };
             var poke2 = new Pokemon() { HP = 0, MaxHp = 20, PokeSpecie = PokeSpecies.Charmander, PokeType = PokeTypes.Fire };
             var poke3 = new Pokemon() { HP = 0, MaxHp = 20, PokeSpecie = PokeSpecies.Squirtle, PokeType = PokeTypes.Water };
-            var poke4 = new Pokemon() { HP = 20, MaxHp = 20, PokeSpecie = PokeSpecies.Pickachu, PokeType = PokeTypes.Electric };
+            var poke4 = new Pokemon() { HP = 0, MaxHp = 20, PokeSpecie = PokeSpecies.Pickachu, PokeType = PokeTypes.Electric };
 
             //put the 4 new pokemon in an Array
             Pokemon[] pokemons = { poke1, poke2, poke3, poke4 };
@@ -86,6 +86,52 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
         }
 
 
+
+        public static void DemoRestoreHP()
+        {
+            Console.Clear();
+
+            //make 4 pokemon
+            var poke1 = new Pokemon() { HP = 0, MaxHp = 20, PokeSpecie = PokeSpecies.Balbasaur, PokeType = PokeTypes.Grass };
+            var poke2 = new Pokemon() { HP = 0, MaxHp = 20, PokeSpecie = PokeSpecies.Charmander, PokeType = PokeTypes.Fire };
+            var poke3 = new Pokemon() { HP = 0, MaxHp = 20, PokeSpecie = PokeSpecies.Squirtle, PokeType = PokeTypes.Water };
+            var poke4 = new Pokemon() { HP = 0, MaxHp = 20, PokeSpecie = PokeSpecies.Pickachu, PokeType = PokeTypes.Electric };
+
+            //put the 4 new pokemon in an Array
+            Pokemon[] pokemons = { poke1, poke2, poke3, poke4 };
+
+           
+            for (int i = 0; i < pokemons.Length; i++)
+            {
+                pokemons[i].RestoreHP(50);
+            }
+
+            for (int i = 0; i < pokemons.Length; i++)
+            {
+                Console.WriteLine(pokemons[i].HP);
+            }
+
+
+            Console.ReadKey();
+        }
+
+
+        public static void DemoFightOutcome()
+        {
+            Console.Clear();
+
+            var balbasaur = new Pokemon() { MaxHp = 20, HP = 20,  PokeSpecie = PokeSpecies.Balbasaur, PokeType = PokeTypes.Grass };
+            var charmander = new Pokemon() { MaxHp = 20, HP = 20,  PokeSpecie = PokeSpecies.Charmander, PokeType = PokeTypes.Fire };
+            var squirtle = new Pokemon() { MaxHp = 20, HP = 20,  PokeSpecie = PokeSpecies.Squirtle, PokeType = PokeTypes.Water };
+            var pickachu = new Pokemon() { MaxHp = 20, HP = 20,  PokeSpecie = PokeSpecies.Pickachu, PokeType = PokeTypes.Electric };
+
+            Random random = new Random();
+
+            Pokemon.FightOutcome(random, balbasaur, charmander);
+
+            Console.ReadKey();
+          
+        }
 
     }
 }
