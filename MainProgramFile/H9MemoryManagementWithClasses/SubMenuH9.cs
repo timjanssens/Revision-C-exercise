@@ -44,6 +44,9 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
                     case '5':
                         PokeProgram.DemoFightOutcome();
                         break;
+                    case '6':
+                        PokeProgram.DemoUpgradeFightOutcome();
+                        break;
                     case 'r':
                         keepMenu = false;
                         break;

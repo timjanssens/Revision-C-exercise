@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Security.Authentication.ExtendedProtection;
 using System.Text;
 
@@ -131,6 +132,96 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
 
             Console.ReadKey();
           
+        }
+
+        public static void DemoUpgradeFightOutcome()
+        {
+            Console.Clear();
+
+            var balbasaur = new Pokemon() { MaxHp = 20, HP = 20, PokeSpecie = PokeSpecies.Balbasaur, PokeType = PokeTypes.Grass };
+            var charmander = new Pokemon() { MaxHp = 20, HP = 20, PokeSpecie = PokeSpecies.Charmander, PokeType = PokeTypes.Fire };
+            var squirtle = new Pokemon() { MaxHp = 20, HP = 20, PokeSpecie = PokeSpecies.Squirtle, PokeType = PokeTypes.Water };
+            var pickachu = new Pokemon() { MaxHp = 20, HP = 20, PokeSpecie = PokeSpecies.Pickachu, PokeType = PokeTypes.Electric };
+
+            Pokemon[] pokemons = { balbasaur, charmander, squirtle,pickachu};
+
+            Random random = new Random();
+
+            Console.WriteLine("******************************");
+            Console.WriteLine("*Welcome in the Pokemon Arena*");
+            Console.WriteLine("******************************");
+            Console.WriteLine("Which Pokemon do you choose as your own to fight with");
+            int counter = 1;
+            foreach (var poke in pokemons)
+            {
+                Console.WriteLine($"{counter++}. {poke.PokeSpecie}");
+            }
+            
+            char choiceOwn = Console.ReadKey().KeyChar;
+            var ownPokemon = new Pokemon();
+
+            switch (choiceOwn)
+            {
+                case '1':
+                    ownPokemon = balbasaur;
+                    break;
+                case '2':
+                    ownPokemon = charmander;
+                    break;
+                case '3':
+                    ownPokemon = squirtle;
+                    break;
+                case '4':
+                    ownPokemon = pickachu;
+                    break;
+
+                default:
+                    break;
+            }
+
+            Console.WriteLine($"\rGreat you choose {ownPokemon.PokeSpecie} as your Pokemon");
+
+            Console.WriteLine("Which Pokemon do you choose as your own to fight with");
+            counter = 1;
+            foreach (var poke in pokemons)
+            {
+                if(ownPokemon.PokeSpecie != poke.PokeSpecie)
+                {
+                    Console.WriteLine($"{counter++}. {poke.PokeSpecie}");
+                }
+                else
+                {
+                    Console.WriteLine($"{counter++}. ----");
+                }
+            }
+
+            char choiceOther = Console.ReadKey().KeyChar;
+            var otherPokemon = new Pokemon();
+            
+            switch (choiceOther)
+            {
+                case '1':
+                    otherPokemon = balbasaur;
+                    break;
+                case '2':
+                    otherPokemon = charmander;
+                    break;
+                case '3':
+                    otherPokemon = squirtle;
+                    break;
+                case '4':
+                    otherPokemon = pickachu;
+                    break;
+
+                default:
+                    break;
+            }
+            Console.WriteLine($"\r{ownPokemon.PokeSpecie} VS {otherPokemon.PokeSpecie}");
+
+            Pokemon.FightOutcome(random, ownPokemon, otherPokemon);
+
+
+            Console.ReadKey();
         }
 
     }
