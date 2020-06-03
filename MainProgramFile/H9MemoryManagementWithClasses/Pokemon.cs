@@ -41,7 +41,7 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
         }
 
 
-      
+
 
         public PokeSpecies PokeSpecie { get; set; }
 
@@ -55,22 +55,22 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
             {
                 case PokeTypes.Grass:
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine(this.PokeSpecie);
+                    Console.WriteLine($"{this.PokeSpecie} ATTACKS");
                     Console.ResetColor();
                     break;
                 case PokeTypes.Fire:
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(this.PokeSpecie);
+                    Console.WriteLine($"{this.PokeSpecie} ATTACKS");
                     Console.ResetColor();
                     break;
                 case PokeTypes.Water:
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine(this.PokeSpecie);
+                    Console.WriteLine($"{this.PokeSpecie} ATTACKS");
                     Console.ResetColor();
                     break;
                 case PokeTypes.Electric:
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine(this.PokeSpecie);
+                    Console.WriteLine($"{this.PokeSpecie} ATTACKS");
                     Console.ResetColor();
                     break;
                 default:
@@ -90,32 +90,52 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
 
             bool keepPlaying = true;
 
-            while (keepPlaying)
+            if ((poke1.HP == 0 ||poke1 == null) && (poke2.HP > 0 || poke2 == null))
+                Console.WriteLine($"{poke2.PokeSpecie} {FightOutcomes.WIN}");
+            else if ((poke1.HP > 0 || poke1 == null) && (poke2.HP == 0 || poke2 == null))
+                Console.WriteLine($"{poke1.PokeSpecie} {FightOutcomes.WIN}");
+            else if ((poke1.HP == 0 || poke1 == null) && (poke2.HP == 0 || poke2 == null))
+                Console.WriteLine($"{ FightOutcomes.UNDECIDED}");
+            else
             {
-                //switch player
-                player = (player + 1) % 2;
+
+                while (keepPlaying)
+                {
+                    //switch player
+                    player = (player + 1) % 2;
 
 
-                if (player == 0) //poke1 attacks
-                {
-                    int attackPoints = random.Next(0, 21);
-                    poke1.Attack();
-                    Console.WriteLine(attackPoints);
-                    int oldHP = poke2.HP;
-                    poke2.HP -= attackPoints;
-                    Console.WriteLine($"{poke2.PokeSpecie} had {oldHP}, after the attack he still has {poke2.HP}HP left");
+                    if (player == 0) //poke1 attacks
+                    {
+                        int attackPoints = random.Next(0, 21);
+                        poke1.Attack();
+                        Console.WriteLine(attackPoints);
+                        int oldHP = poke2.HP;
+                        poke2.HP -= attackPoints;
+                        Console.WriteLine($"{poke2.PokeSpecie} had {oldHP}, after the attack he still has {poke2.HP}HP left");
+                        if (poke2.HP == 0)
+                        {
+                            keepPlaying = false;
+                            Console.WriteLine($"{poke1.PokeSpecie} {FightOutcomes.WIN}");
+                        }
+                    }
+                    else if (player == 1) //poke2 attacks
+                    {
+                        int attackPoints = random.Next(0, 21);
+                        poke2.Attack();
+                        Console.WriteLine(attackPoints);
+                        int oldHP = poke1.HP;
+                        poke1.HP -= attackPoints;
+                        Console.WriteLine($"{poke1.PokeSpecie} had {oldHP}, after the attack he still has {poke1.HP}HP left");
+                        if (poke1.HP == 0)
+                        {
+                            keepPlaying = false;
+                            Console.WriteLine($"{poke2.PokeSpecie} {FightOutcomes.WIN}");
+                        }
+                    }
                 }
-                if (player == 1) //poke2 attacks
-                {
-                    int attackPoints = random.Next(0, 21);
-                    poke2.Attack();
-                    Console.WriteLine(attackPoints);
-                    int oldHP = poke1.HP;
-                    poke1.HP -= attackPoints;
-                    Console.WriteLine($"{poke1.PokeSpecie} had {oldHP}, after the attack he still has {poke1.HP}HP left");
-                }
-                Console.ReadKey();
             }
+            Console.ReadKey();
 
         }
 

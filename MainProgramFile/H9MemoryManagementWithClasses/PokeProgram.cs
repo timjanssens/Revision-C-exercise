@@ -120,8 +120,8 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
         {
             Console.Clear();
 
-            var balbasaur = new Pokemon() { MaxHp = 20, HP = 20,  PokeSpecie = PokeSpecies.Balbasaur, PokeType = PokeTypes.Grass };
-            var charmander = new Pokemon() { MaxHp = 20, HP = 20,  PokeSpecie = PokeSpecies.Charmander, PokeType = PokeTypes.Fire };
+            var balbasaur = new Pokemon(){ MaxHp = 20, HP = 20,  PokeSpecie = PokeSpecies.Balbasaur, PokeType = PokeTypes.Grass };
+            var charmander = new Pokemon() { MaxHp = 20, HP = 0,  PokeSpecie = PokeSpecies.Charmander, PokeType = PokeTypes.Fire };
             var squirtle = new Pokemon() { MaxHp = 20, HP = 20,  PokeSpecie = PokeSpecies.Squirtle, PokeType = PokeTypes.Water };
             var pickachu = new Pokemon() { MaxHp = 20, HP = 20,  PokeSpecie = PokeSpecies.Pickachu, PokeType = PokeTypes.Electric };
 
