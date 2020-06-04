@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MainProgramFile.H9MemoryManagementWithClasses
+namespace MainProgramFile.H10AdvancedClassesAndObjects
 {
-    class SubMenuH9
+    class SubMenuH10
     {
 
         public static void Main()
@@ -15,14 +15,14 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
             {
 
                 Console.Clear();
-                Console.WriteLine("H9 Memory management with classes.");
+                Console.WriteLine("H10 Advanced Classes and objects.");
                 Console.WriteLine("**********************************");
-                Console.WriteLine("1. PokeAttack");
-                Console.WriteLine("2. Consious Pokemon");
-                Console.WriteLine("3. Consious Pokemon Safe");
-                Console.WriteLine("4. Poke Value or reference");
-                Console.WriteLine("5. PokeFight");
-                Console.WriteLine("6. PokeFight imporved");
+                Console.WriteLine("1. Pokemon with contstructor");
+                Console.WriteLine("2. Make Pokemon with chained constructor");
+                Console.WriteLine("3. Pokemon Battle counter ");
+                Console.WriteLine("4. ");
+                Console.WriteLine("5. ");
+                Console.WriteLine("5. ");
                 Console.WriteLine("r. Return to main menu");
                 Console.WriteLine("q. End Program");
                 char choice = Console.ReadKey().KeyChar;
@@ -30,22 +30,22 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
                 switch (choice)
                 {
                     case '1':
-                        PokeProgram.MakePokemon();
+                        H9MemoryManagementWithClasses.PokeProgram.DemonstratePokemonWithConstructor();
                         break;
                     case '2':
-                        PokeProgram.TestConsiousPokemon();
+                        H9MemoryManagementWithClasses.PokeProgram.ConstructPokemonChained();
                         break;
                     case '3':
-                        PokeProgram.testConsiousPokemonSafe();
+                        H9MemoryManagementWithClasses.PokeProgram.DemonstrateCounter();
                         break;
                     case '4':
-                        PokeProgram.DemoRestoreHP();
+                        //  H9MemoryManagementWithClasses.PokeProgram.MakePokemon();
                         break;
                     case '5':
-                        PokeProgram.DemoFightOutcome();
+                        //  H9MemoryManagementWithClasses.PokeProgram.MakePokemon();
                         break;
                     case '6':
-                        PokeProgram.DemoUpgradeFightOutcome();
+                        //  H9MemoryManagementWithClasses.PokeProgram.MakePokemon();
                         break;
                     case 'r':
                         keepMenu = false;

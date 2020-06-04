@@ -7,6 +7,11 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
 {
     class Pokemon
     {
+        private static int grassCounter =0;
+        private static int fireCounter = 0;
+        private static int waterCounter = 0;
+        private static int electricCounter = 0;
+
         #region Properties
 
         private int maxHp;
@@ -46,8 +51,30 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
         public PokeSpecies PokeSpecie { get; set; }
 
         public PokeTypes PokeType { get; set; }
+        public static int GrassCounter { get => grassCounter; set => grassCounter = value; }
+        public static int FireCounter { get => fireCounter; set => fireCounter = value; }
+        public static int WaterCounter { get => waterCounter; set => waterCounter = value; }
+        public static int ElectricCounter { get => electricCounter; set => electricCounter = value; }
 
         #endregion
+        public Pokemon()
+        {
+
+        }
+
+        public Pokemon(int maxHp, int hP, PokeSpecies pokeSpecie, PokeTypes pokeType)
+        {
+            this.MaxHp = maxHp;
+            this.HP = hP;
+            this.PokeSpecie = pokeSpecie;
+            this.PokeType = pokeType;
+        }
+
+        public Pokemon(int maxHP, PokeSpecies pokeSpecie, PokeTypes pokeType) : this(maxHP, maxHP/2, pokeSpecie, pokeType)
+        {
+
+        }
+
 
         public void Attack()
         {
@@ -57,21 +84,25 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"{this.PokeSpecie} ATTACKS");
                     Console.ResetColor();
+                    GrassCounter++;
                     break;
                 case PokeTypes.Fire:
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"{this.PokeSpecie} ATTACKS");
                     Console.ResetColor();
+                    FireCounter++;
                     break;
                 case PokeTypes.Water:
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine($"{this.PokeSpecie} ATTACKS");
                     Console.ResetColor();
+                    WaterCounter++;
                     break;
                 case PokeTypes.Electric:
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine($"{this.PokeSpecie} ATTACKS");
                     Console.ResetColor();
+                    ElectricCounter++;
                     break;
                 default:
                     break;

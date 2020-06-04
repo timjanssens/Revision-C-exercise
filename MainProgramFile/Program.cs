@@ -1,4 +1,5 @@
-﻿using MainProgramFile.H8KlassenEnObjecten;
+﻿using MainProgramFile.H10AdvancedClassesAndObjects;
+using MainProgramFile.H8KlassenEnObjecten;
 using MainProgramFile.H9MemoryManagementWithClasses;
 using System;
 using System.Xml.Serialization;
@@ -19,6 +20,7 @@ namespace MainProgramFile
                 Console.WriteLine("*************");
                 Console.WriteLine("1. H8 Classes and objewcts (+  DateTime)");
                 Console.WriteLine("2. H9 Memory management with classes");
+                Console.WriteLine("3. H10 Advanced classes and objects");
                 Console.WriteLine("q. End program");
 
                 choiceMain = Console.ReadKey().KeyChar;
@@ -31,7 +33,9 @@ namespace MainProgramFile
                     case '2':
                         SubMenuH9.Main();
                         break;
-                        
+                    case '3':
+                        SubMenuH10.Main();
+                        break;                      
 
 
                     case 'q':

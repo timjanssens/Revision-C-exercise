@@ -224,5 +224,95 @@ namespace MainProgramFile.H9MemoryManagementWithClasses
             Console.ReadKey();
         }
 
+
+        public static void DemonstratePokemonWithConstructor()
+        {
+            Console.Clear();
+
+            var balbasaur = new Pokemon(20, 20, PokeSpecies.Balbasaur, PokeTypes.Grass);
+            var charmander = new Pokemon(20, 20, PokeSpecies.Charmander, PokeTypes.Fire);
+            var squirtle = new Pokemon(20, 20, PokeSpecies.Squirtle, PokeTypes.Water);
+            var pikachu = new Pokemon(20, 20, PokeSpecies.Pickachu, PokeTypes.Electric);
+
+            Pokemon[] pokemon = { balbasaur, charmander, squirtle, pikachu };
+
+            foreach (var poke in pokemon)
+            {
+                Console.WriteLine($"{poke.PokeSpecie}\t\t\tHP: {poke.HP}\t\t\tMaxHP: {poke.MaxHp}");
+            }
+
+            Console.ReadKey();
+        }
+
+        public static void ConstructPokemonChained()
+        {
+            Console.Clear();
+
+            var balbasaur = new Pokemon(80, PokeSpecies.Balbasaur, PokeTypes.Grass);
+            var charmander = new Pokemon(60, PokeSpecies.Charmander, PokeTypes.Fire);
+            var squirtle = new Pokemon(40, PokeSpecies.Squirtle, PokeTypes.Water);
+            var pikachu = new Pokemon(20, PokeSpecies.Pickachu, PokeTypes.Electric);
+
+            Pokemon[] pokemon = { balbasaur, charmander, squirtle, pikachu };
+
+            foreach (var poke in pokemon)
+            {
+                Console.WriteLine($"{poke.PokeSpecie}\t\t\tHP: {poke.HP}\t\t\tMaxHP: {poke.MaxHp}");
+            }
+
+            Console.ReadKey();
+
+        }
+
+        public static void DemonstrateCounter()
+        {
+            Console.Clear();
+
+            var charmander = new Pokemon(60, PokeSpecies.Charmander, PokeTypes.Fire);
+            var balbasaur = new Pokemon(80, PokeSpecies.Balbasaur, PokeTypes.Grass);
+            var squirtle = new Pokemon(40, PokeSpecies.Squirtle, PokeTypes.Water);
+            var pikachu = new Pokemon(20, PokeSpecies.Pickachu, PokeTypes.Electric);
+            var chary = new Pokemon(60, PokeSpecies.Charmander, PokeTypes.Fire);
+
+
+            //var balbasaur = new Pokemon() { MaxHp = 20, HP = 20, PokeSpecie = PokeSpecies.Balbasaur, PokeType = PokeTypes.Grass };
+            //var charmander = new Pokemon() { MaxHp = 20, HP = 20, PokeSpecie = PokeSpecies.Charmander, PokeType = PokeTypes.Fire };
+            //var squirtle = new Pokemon() { MaxHp = 20, HP = 20, PokeSpecie = PokeSpecies.Squirtle, PokeType = PokeTypes.Water };
+            //var pikachu = new Pokemon() { MaxHp = 20, HP = 20, PokeSpecie = PokeSpecies.Pickachu, PokeType = PokeTypes.Electric };
+            //var chary = new Pokemon() { MaxHp = 20, HP = 20, PokeSpecie = PokeSpecies.Pickachu, PokeType = PokeTypes.Fire };
+
+            //Pokemon[] pokemon = { balbasaur, charmander, squirtle, pikachu, chary };
+
+            balbasaur.Attack();
+            balbasaur.Attack();
+            balbasaur.Attack();
+            balbasaur.Attack();
+            charmander.Attack();
+            charmander.Attack();
+            squirtle.Attack();
+            squirtle.Attack();
+            squirtle.Attack();
+            squirtle.Attack();
+            squirtle.Attack();
+            squirtle.Attack();
+            pikachu.Attack();
+            pikachu.Attack();
+            chary.Attack();
+            chary.Attack();
+            chary.Attack();
+            chary.Attack();
+            chary.Attack();
+            chary.Attack();
+            chary.Attack();
+
+            Console.WriteLine($"Attacks from type 'grass': {Pokemon.GrassCounter}");
+            Console.WriteLine($"Attacks from type 'fire': {Pokemon.FireCounter}");
+            Console.WriteLine($"Attacks from type 'water': {Pokemon.WaterCounter}");
+            Console.WriteLine($"Attacks from type 'electric': {Pokemon.ElectricCounter}");
+
+            Console.ReadKey();
+
+        }
+
     }
 }
